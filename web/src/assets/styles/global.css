@@ -1,0 +1,63 @@
+/* CSS aplicados independentes da página */
+
+:root {
+    font-size: 60%;
+    /* Váriaveis de cores. Assim é possível customizar o tema da aplicação */
+    --color-background: #F0F0F7;
+    --color-primary-lighter: #9871F5;
+    --color-primary-light: #916BEA;
+    --color-primary: #8257E5;
+    --color-primary-dark: #774DD6;
+    --color-primary-darker: #6842C2;
+    --color-secondary: #04D361;
+    --color-secondary-dark: #04BF58;
+    --color-title-in-primary: #FFFFFF;
+    --color-text-in-primary: #D4C2FF;
+    --color-text-title: #32264D;
+    --color-text-complement: #9C98A6;
+    --color-text-base: #6A6180;
+    --color-line-in-white: #E6E6F0;
+    --color-input-background: #F8F8FC;
+    --color-button-text: #FFFFFF;
+    --color-box-base: #FFFFFF;
+    --color-box-footer: #FAFAFC;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Faz com que o padding conte na largura e altura do elemento */
+}
+
+html, body, #root {
+    height: 100vh; /* Faz com que a página ocupe a altura total da tela */
+}
+
+body {
+    background: var(--color-background);
+}
+
+#root {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body, input, button, textarea {
+    font: 500 1.6rem Poppins; /* rem: pega a fontsize do elemente e aumenta-a em 60%. Utilizado para aplicações responsiva. Em conjunto com o fontsize global, permite deixa a interface mais fluida.k n */
+    color: var(--color-text-base)
+}
+
+.container {
+    width: 90vw; /* 90% da largura da tela do dispositivo rodando o app */
+    max-width: 700px;
+}
+
+/* Media query condicional para telas maiores que 700px*/
+@media (min-width: 700px) {
+    :root {
+        /* Converte o tamanho global da minha fonte para 10px, isso pq 16px * 0,6 = 9,6px e 16px * 0,625 = 10px */
+        font-size: 62.5%;
+    }
+}
